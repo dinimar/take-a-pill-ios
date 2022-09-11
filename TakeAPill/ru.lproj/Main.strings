@@ -1,0 +1,108 @@
+
+/* Class = "UITableViewSection"; headerTitle = "Days of the week"; ObjectID = "2Mw-h8-FUL"; */
+"2Mw-h8-FUL.headerTitle" = "Days of the week";
+
+/* Class = "UILabel"; text = "Title"; ObjectID = "Epj-Rr-PAX"; */
+"Epj-Rr-PAX.text" = "Title";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[0] = "Mo"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[0]" = "Mo";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[1] = "Tu"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[1]" = "Tu";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[2] = "We"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[2]" = "We";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[3] = "Th"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[3]" = "Th";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[4] = "Fr"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[4]" = "Fr";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[5] = "Sa"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[5]" = "Sa";
+
+/* Class = "UISegmentedControl"; F0A-XH-XgE.segmentTitles[6] = "Su"; ObjectID = "F0A-XH-XgE"; */
+"F0A-XH-XgE.segmentTitles[6]" = "Su";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "HDj-TK-485"; */
+"HDj-TK-485.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "HDj-TK-485"; */
+"HDj-TK-485.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "IRk-lv-5TE"; */
+"IRk-lv-5TE.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "IRk-lv-5TE"; */
+"IRk-lv-5TE.normalTitle" = "Button";
+
+/* Class = "UITableViewSection"; headerTitle = "Period"; ObjectID = "Mip-CV-Vyz"; */
+"Mip-CV-Vyz.headerTitle" = "Period";
+
+/* Class = "UIButton"; configuration.title = "Add New Schedule"; ObjectID = "Nu5-9z-qrQ"; */
+"Nu5-9z-qrQ.configuration.title" = "Add New Schedule";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "Nu5-9z-qrQ"; */
+"Nu5-9z-qrQ.normalTitle" = "Button";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "U1F-tN-L4B"; */
+"U1F-tN-L4B.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "U1F-tN-L4B"; */
+"U1F-tN-L4B.normalTitle" = "Button";
+
+/* Class = "UITableViewSection"; headerTitle = "Days of the week"; ObjectID = "XBv-ny-jpy"; */
+"XBv-ny-jpy.headerTitle" = "Days of the week";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "XiX-da-qkX"; */
+"XiX-da-qkX.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "XiX-da-qkX"; */
+"XiX-da-qkX.normalTitle" = "Button";
+
+/* Class = "UINavigationItem"; title = "Schedule List"; ObjectID = "ajy-1a-vDf"; */
+"ajy-1a-vDf.title" = "Schedule List";
+
+/* Class = "UINavigationItem"; title = "New Schedule"; ObjectID = "dXH-TG-brS"; */
+"dXH-TG-brS.title" = "New Schedule";
+
+/* Class = "UITableViewSection"; headerTitle = "Name"; ObjectID = "h8r-Yq-uoB"; */
+"h8r-Yq-uoB.headerTitle" = "Name";
+
+/* Class = "UITextField"; placeholder = "Start Date"; ObjectID = "iLi-mX-HTC"; */
+"iLi-mX-HTC.placeholder" = "Start Date";
+
+/* Class = "UITableViewSection"; headerTitle = "Consumption time"; ObjectID = "isj-rw-5Fz"; */
+"isj-rw-5Fz.headerTitle" = "Consumption time";
+
+/* Class = "UILabel"; text = "Detail"; ObjectID = "nN4-1y-flO"; */
+"nN4-1y-flO.text" = "Detail";
+
+/* Class = "UITextField"; placeholder = "End Date"; ObjectID = "qjs-SN-G2A"; */
+"qjs-SN-G2A.placeholder" = "End Date";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "r7R-8a-EbG"; */
+"r7R-8a-EbG.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "r7R-8a-EbG"; */
+"r7R-8a-EbG.normalTitle" = "Button";
+
+/* Class = "UITableViewSection"; headerTitle = "Days of the week"; ObjectID = "t25-tW-Io3"; */
+"t25-tW-Io3.headerTitle" = "Days of the week";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "ttC-Co-SUL"; */
+"ttC-Co-SUL.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "ttC-Co-SUL"; */
+"ttC-Co-SUL.normalTitle" = "Button";
+
+/* Class = "UILabel"; text = "Take A Pill"; ObjectID = "vRY-m5-fxe"; */
+"vRY-m5-fxe.text" = "Take A Pill";
+
+/* Class = "UIButton"; configuration.title = "Mo"; ObjectID = "vaa-1g-Sgy"; */
+"vaa-1g-Sgy.configuration.title" = "Mo";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "vaa-1g-Sgy"; */
+"vaa-1g-Sgy.normalTitle" = "Button";
