@@ -320,13 +320,12 @@
                     <navigationItem key="navigationItem" title="New Schedule" id="dXH-TG-brS">
                         <barButtonItem key="leftBarButtonItem" systemItem="cancel" id="fIu-Ap-FRS">
                             <connections>
-                                <action selector="cancelButtonTapped:" destination="ZYC-ta-ug7" id="THA-fX-TxH"/>
-                                <segue destination="WfI-cu-MOS" kind="unwind" identifier="cancelUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="EsY-KD-Cfy"/>
+                                <action selector="cancelButtonTapped:" destination="ZYC-ta-ug7" id="Kiq-mJ-qHL"/>
                             </connections>
                         </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" systemItem="save" id="Tx4-w6-tVO">
                             <connections>
-                                <segue destination="WfI-cu-MOS" kind="unwind" identifier="saveUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="cAA-Ul-NM4"/>
+                                <action selector="saveButtonTapped:" destination="ZYC-ta-ug7" id="uSL-b0-Z9a"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -335,9 +334,10 @@
                         <outlet property="nameTextField" destination="GNb-wW-0v9" id="c2m-48-eae"/>
                         <outlet property="navigationBar" destination="dXH-TG-brS" id="K8e-fa-UI5"/>
                         <outlet property="periodDatesPicker" destination="viM-Cg-wg6" id="iKy-iF-eYv"/>
-                        <outlet property="saveButton" destination="Tx4-w6-tVO" id="RNf-SK-LNj"/>
+                        <outlet property="saveButton" destination="Tx4-w6-tVO" id="6U3-Eg-os2"/>
                         <outlet property="weekDayPicker" destination="rCb-7J-l8a" id="L3i-Yu-GpN"/>
-                        <segue destination="WfI-cu-MOS" kind="unwind" identifier="manualUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="ftL-Hg-gQw"/>
+                        <segue destination="WfI-cu-MOS" kind="unwind" identifier="cancelUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="ftL-Hg-gQw"/>
+                        <segue destination="WfI-cu-MOS" kind="unwind" identifier="saveUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="Hp1-XL-K0h"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOY-5Q-Dmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
