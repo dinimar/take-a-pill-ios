@@ -9,6 +9,9 @@
 /* Begin PBXBuildFile section */
 		2308532D28C4D0130073F7E8 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2308532C28C4D0130073F7E8 /* CalendarExtension.swift */; };
 		2308532F28C4D7180073F7E8 /* OnOffButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2308532E28C4D7180073F7E8 /* OnOffButton.swift */; };
+		230E04E928E4CC110058EC33 /* ViewUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E04E828E4CC110058EC33 /* ViewUtils.swift */; };
+		230E04EB28E4CEF50058EC33 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 230E04EA28E4CEF50058EC33 /* UIColorExtension.swift */; };
+		2314DB5328E4C6D9007CCAB4 /* ScheduleTabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2314DB5228E4C6D8007CCAB4 /* ScheduleTabBarController.swift */; };
 		2322E53C28E317E80039F2B9 /* CloseableDatePickerTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2322E53B28E317E70039F2B9 /* CloseableDatePickerTextField.swift */; };
 		2323517728C4AB550099C3C3 /* WeekDayPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2323517628C4AB550099C3C3 /* WeekDayPicker.swift */; };
 		2329FBCB28C1209100CAB679 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2329FBCA28C1209100CAB679 /* DateExtension.swift */; };
@@ -30,6 +33,9 @@
 /* Begin PBXFileReference section */
 		2308532C28C4D0130073F7E8 /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
 		2308532E28C4D7180073F7E8 /* OnOffButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnOffButton.swift; sourceTree = "<group>"; };
+		230E04E828E4CC110058EC33 /* ViewUtils.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUtils.swift; sourceTree = "<group>"; };
+		230E04EA28E4CEF50058EC33 /* UIColorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		2314DB5228E4C6D8007CCAB4 /* ScheduleTabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScheduleTabBarController.swift; sourceTree = "<group>"; };
 		2322E53B28E317E70039F2B9 /* CloseableDatePickerTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CloseableDatePickerTextField.swift; sourceTree = "<group>"; };
 		2323517628C4AB550099C3C3 /* WeekDayPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeekDayPicker.swift; sourceTree = "<group>"; };
 		2323518228C4B5130099C3C3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -66,6 +72,7 @@
 			children = (
 				2329FBCA28C1209100CAB679 /* DateExtension.swift */,
 				2308532C28C4D0130073F7E8 /* CalendarExtension.swift */,
+				230E04EA28E4CEF50058EC33 /* UIColorExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -123,6 +130,8 @@
 				235BF5DD28762B8E00551329 /* IntroductionViewController.swift */,
 				2373BB1D28870F7700C0F74B /* ScheduleSetupViewController.swift */,
 				237A9C3228BC09190012236F /* ScheduleListTableViewController.swift */,
+				2314DB5228E4C6D8007CCAB4 /* ScheduleTabBarController.swift */,
+				230E04E828E4CC110058EC33 /* ViewUtils.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -212,7 +221,9 @@
 				237A9C3328BC09190012236F /* ScheduleListTableViewController.swift in Sources */,
 				233EE31B28C130DF005DE3C7 /* DatePickerTextField.swift in Sources */,
 				23B657EA2879CD5300685DD1 /* MedicationSchedule.swift in Sources */,
+				230E04EB28E4CEF50058EC33 /* UIColorExtension.swift in Sources */,
 				2322E53C28E317E80039F2B9 /* CloseableDatePickerTextField.swift in Sources */,
+				2314DB5328E4C6D9007CCAB4 /* ScheduleTabBarController.swift in Sources */,
 				2373BB1E28870F7700C0F74B /* ScheduleSetupViewController.swift in Sources */,
 				238FACAD28DF3079001BECA8 /* ConsumptionTimeSetupBar.swift in Sources */,
 				2308532F28C4D7180073F7E8 /* OnOffButton.swift in Sources */,
@@ -222,6 +233,7 @@
 				2323517728C4AB550099C3C3 /* WeekDayPicker.swift in Sources */,
 				235BF5DC28762B8E00551329 /* SceneDelegate.swift in Sources */,
 				2308532D28C4D0130073F7E8 /* CalendarExtension.swift in Sources */,
+				230E04E928E4CC110058EC33 /* ViewUtils.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

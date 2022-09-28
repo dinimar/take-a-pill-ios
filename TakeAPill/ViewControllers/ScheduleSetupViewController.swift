@@ -25,6 +25,11 @@ class ScheduleSetupViewController: UITableViewController,
     @IBOutlet var weekDayPicker: WeekDayPicker!
     @IBOutlet var periodDatesPicker: PeriodDatesPicker!
 
+    @IBOutlet var nameCellContentView: UIView!
+    @IBOutlet var periodCellContentView: UIView!
+    @IBOutlet var consumptionTimeBarCellContentView: UIView!
+    @IBOutlet var weekDaysCellContentView: UIView!
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -108,6 +113,7 @@ class ScheduleSetupViewController: UITableViewController,
     }
 
     func updateView() {
+        initCellsColor()
         guard let schedule = schedule else {
             navigationBar.title = "New Schedule"
             isNewSchedule = true
@@ -120,6 +126,19 @@ class ScheduleSetupViewController: UITableViewController,
         periodDatesPicker.setPeriod(startDate: schedule.periodDayStart, endDate: schedule.periodDayEnd)
         consumptionTimeSetupBar.timestamps = schedule.consumptionTime
         weekDayPicker.selectedWeekdays = schedule.weekDays.map({$0.rawValue})
+    }
+
+    private func initCellsColor() {
+        let uiMode = self.traitCollection.userInterfaceStyle
+        var color: UIColor = .white
+        if uiMode == .dark {
+            color = UIColor(white: 28/255, alpha: 1)
+        }
+
+        nameCellContentView.backgroundColor = color
+        periodCellContentView.backgroundColor = color
+        consumptionTimeBarCellContentView.backgroundColor = color
+        weekDaysCellContentView.backgroundColor = color
     }
 
     func weekdaySelected() {

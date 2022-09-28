@@ -126,10 +126,11 @@
             </objects>
             <point key="canvasLocation" x="1874" y="-617"/>
         </scene>
-        <!--Tab Bar Controller-->
+        <!--Schedule Tab Bar Controller-->
         <scene sceneID="xX0-GS-H2y">
             <objects>
-                <tabBarController id="I6A-Ml-VZA" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QG7-RX-gYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <tabBarController id="I6A-Ml-VZA" customClass="ScheduleTabBarController" customModule="TakeAPill" customModuleProvider="target" sceneMemberID="viewController">
                     <navigationItem key="navigationItem" id="kcL-jo-fjj"/>
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EEI-kf-1cX">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
@@ -141,7 +142,6 @@
                         <segue destination="NZK-m4-Gz3" kind="relationship" relationship="viewControllers" id="fYo-QF-PEE"/>
                     </connections>
                 </tabBarController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="QG7-RX-gYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-396" y="-1061"/>
         </scene>
@@ -227,6 +227,7 @@
                                                 <constraint firstItem="GNb-wW-0v9" firstAttribute="top" secondItem="3Xs-kO-ALV" secondAttribute="top" constant="5" id="vhI-2g-nwK"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.10980392156862745" green="0.1096928492" blue="0.1176481321" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
@@ -381,12 +382,16 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
+                        <outlet property="consumptionTimeBarCellContentView" destination="SaT-zi-OWd" id="jI9-8J-7DG"/>
                         <outlet property="consumptionTimeSetupBar" destination="t1G-IX-ayh" id="gL2-Mz-Rvv"/>
+                        <outlet property="nameCellContentView" destination="3Xs-kO-ALV" id="MdS-8h-Xo2"/>
                         <outlet property="nameTextField" destination="GNb-wW-0v9" id="c2m-48-eae"/>
                         <outlet property="navigationBar" destination="dXH-TG-brS" id="K8e-fa-UI5"/>
+                        <outlet property="periodCellContentView" destination="g2u-Hq-Uds" id="acI-O2-yzO"/>
                         <outlet property="periodDatesPicker" destination="viM-Cg-wg6" id="iKy-iF-eYv"/>
                         <outlet property="saveButton" destination="Tx4-w6-tVO" id="6U3-Eg-os2"/>
                         <outlet property="weekDayPicker" destination="rCb-7J-l8a" id="L3i-Yu-GpN"/>
+                        <outlet property="weekDaysCellContentView" destination="ZyD-xl-bXZ" id="SeS-OM-Keb"/>
                         <segue destination="WfI-cu-MOS" kind="unwind" identifier="cancelUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="ftL-Hg-gQw"/>
                         <segue destination="WfI-cu-MOS" kind="unwind" identifier="saveUnwind" unwindAction="unwindToScheduleListViewContollerWithSegue:" id="Hp1-XL-K0h"/>
                     </connections>

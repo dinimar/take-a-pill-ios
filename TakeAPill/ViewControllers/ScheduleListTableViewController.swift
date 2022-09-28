@@ -71,9 +71,10 @@ class ScheduleListTableViewController: UITableViewController {
     private func updateView() {
         tableView.alwaysBounceVertical = false
 
+        let uiMode = self.traitCollection.userInterfaceStyle
         let appearance = UINavigationBarAppearance()
         appearance.configureWithOpaqueBackground()
-        appearance.backgroundColor = UIColor(white: 242/255, alpha: 1.0)
+        appearance.backgroundColor = getViewColor(forUiMode: uiMode)
         self.navigationItem.standardAppearance = appearance
         self.navigationItem.scrollEdgeAppearance = appearance
     }
