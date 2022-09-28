@@ -8,6 +8,14 @@
 import Foundation
 
 extension Date {
+    var hours: Int {
+        Calendar.current.component(.hour, from: self)
+    }
+    var minutes: Int {
+        Calendar.current.component(.minute, from: self) +
+        hours * 60
+    }
+    
     init(fromString dateString: String, format dateType: DateType) {
         var dateFormatStr = ""
         switch dateType {

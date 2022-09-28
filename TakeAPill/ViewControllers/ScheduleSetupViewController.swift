@@ -10,33 +10,37 @@ import UIKit
 class ScheduleSetupViewController: UITableViewController,
                                    WeekDayPickerDelegate,
                                    DatePickerTextFieldDelegate,
-                                   PeriodDatesPickerDelegate {
+                                   PeriodDatesPickerDelegate,
+                                   ConsumtionTimeSetupBar {
     var schedule: MedicationSchedule?
     var isScheduleChanged: Bool = false
     var isNewSchedule: Bool = false
+    var isButtonUnwindPerformed: Bool = false
 
     @IBOutlet var navigationBar: UINavigationItem!
     @IBOutlet var saveButton: UIBarButtonItem!
 
     @IBOutlet var nameTextField: UITextField!
-    @IBOutlet var consumptionTimeTextField: DatePickerTextField!
+    @IBOutlet var consumptionTimeSetupBar: ConsumptionTimeSetupBar!
     @IBOutlet var weekDayPicker: WeekDayPicker!
     @IBOutlet var periodDatesPicker: PeriodDatesPicker!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Disable manual dismissal
-        isModalInPresentation = true
-
         saveButton.isEnabled = false
         weekDayPicker.delegate = self
-        consumptionTimeTextField.datePickerDelegate = self
+        consumptionTimeSetupBar.delegate = self
         periodDatesPicker.delegate = self
         updateView()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
+        guard isButtonUnwindPerformed else {
+            performCancelUnwind()
+            return
+        }
+
         super.viewWillDisappear(animated)
     }
 
@@ -46,9 +50,10 @@ class ScheduleSetupViewController: UITableViewController,
         }
 
         let periodDates = periodDatesPicker.getPeriod()
-        let consumptionTime = consumptionTimeTextField.getDate()
+        let consumptionTime = consumptionTimeSetupBar.timestamps
         let name = (nameTextField.text ?? "").lowercased()
-        let weekDays = weekDayPicker.selectedWeekdays.map({WeekDays(rawValue: $0) ?? .WrongWeekday})
+        let weekDays = weekDayPicker.selectedWeekdays.map(
+                       {WeekDays(rawValue: $0) ?? .WrongWeekday})
 
         self.schedule = MedicationSchedule(name: name,
                                            weekDays: weekDays,
@@ -65,15 +70,22 @@ class ScheduleSetupViewController: UITableViewController,
         if weekDayPicker.selectedWeekdays.isEmpty {
             emptyFields.append("Days of the week")
         }
+        if consumptionTimeSetupBar.timestamps.isEmpty {
+            emptyFields.append("Consumption time")
+        }
 
         guard emptyFields.isEmpty else {
             showEmptyFieldsAlert(emptyFields)
             return
         }
+
+        isButtonUnwindPerformed = true
         self.performSegue(withIdentifier: "saveUnwind", sender: self)
     }
 
     @IBAction func cancelButtonTapped(_ sender: Any) {
+        isButtonUnwindPerformed = true
+
         guard isNewSchedule else {
             performCancelUnwind()
             return
@@ -98,7 +110,6 @@ class ScheduleSetupViewController: UITableViewController,
     func updateView() {
         guard let schedule = schedule else {
             navigationBar.title = "New Schedule"
-            consumptionTimeTextField.initializeType(.OnlyTime)
             isNewSchedule = true
             return
         }
@@ -107,7 +118,7 @@ class ScheduleSetupViewController: UITableViewController,
         nameTextField.text = schedule.name
 
         periodDatesPicker.setPeriod(startDate: schedule.periodDayStart, endDate: schedule.periodDayEnd)
-        consumptionTimeTextField.setDate(schedule.consumptionTime, dateType: .OnlyTime)
+        consumptionTimeSetupBar.timestamps = schedule.consumptionTime
         weekDayPicker.selectedWeekdays = schedule.weekDays.map({$0.rawValue})
     }
 
@@ -123,9 +134,16 @@ class ScheduleSetupViewController: UITableViewController,
         onScheduleChanged()
     }
 
+    func timeBarChanged() {
+        onScheduleChanged()
+    }
+
     private func onScheduleChanged() {
         saveButton.isEnabled = true
         isScheduleChanged = true
+
+        // Disable manual dismissal
+        isModalInPresentation = true
     }
 
     private func performCancelUnwind() {
@@ -142,12 +160,12 @@ class ScheduleSetupViewController: UITableViewController,
                                       message: "Do you want to save your changes?",
                                       preferredStyle: .alert)
 
-        let saveAction = UIAlertAction(title: "Save",
+        let saveAction = UIAlertAction(title: "Yes",
                                        style: .default,
                                        handler: {(action) in
             self.performSegue(withIdentifier: "saveUnwind", sender: self)})
 
-        let discardAction = UIAlertAction(title: "Discard",
+        let discardAction = UIAlertAction(title: "No",
                                           style: .cancel,
                                           handler: {(action) in
             self.performSegue(withIdentifier: "cancelUnwind", sender: self)})

@@ -21,9 +21,9 @@ internal class DatePickerTextField: UITextField {
         initialize()
     }
 
-    init(dateType: Date.DateType) {
+    init(dateType: Date.DateType, date: Date = Date()) {
         super.init(frame: .zero)
-        setDate(Date(), dateType: .OnlyDate)
+        setDate(date, dateType: dateType)
         initialize()
     }
 
@@ -48,7 +48,12 @@ internal class DatePickerTextField: UITextField {
         switch dateType {
             case .OnlyTime:
                 datePicker.datePickerMode = .time
-                self.text = date.formatted(date: .omitted, time: .shortened)
+                var resultText = ""
+
+                let dateText = date.formatted(date: .omitted, time: .shortened)
+                if (dateText.count == 4) { resultText.append("0") }
+                resultText.append(dateText)
+                self.text = resultText
 
             case .OnlyDate:
                 datePicker.datePickerMode = .date

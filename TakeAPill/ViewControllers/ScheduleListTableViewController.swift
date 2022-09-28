@@ -13,6 +13,7 @@ class ScheduleListTableViewController: UITableViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        updateView()
     }
 
     @IBAction func unwindToScheduleListViewContoller(segue: UIStoryboardSegue) {
@@ -65,5 +66,15 @@ class ScheduleListTableViewController: UITableViewController {
         cell.update(schedule: schedules[indexPath.row])
 
         return cell
+    }
+
+    private func updateView() {
+        tableView.alwaysBounceVertical = false
+
+        let appearance = UINavigationBarAppearance()
+        appearance.configureWithOpaqueBackground()
+        appearance.backgroundColor = UIColor(white: 242/255, alpha: 1.0)
+        self.navigationItem.standardAppearance = appearance
+        self.navigationItem.scrollEdgeAppearance = appearance
     }
 }

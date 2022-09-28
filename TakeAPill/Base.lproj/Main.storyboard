@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NZK-m4-Gz3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="20037" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="I6A-Ml-VZA">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="20020"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -45,9 +46,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="N9b-PD-D9V" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-297" y="116"/>
+            <point key="canvasLocation" x="-1196" y="-413"/>
         </scene>
-        <!--Schedule List-->
+        <!--Medication Schedules-->
         <scene sceneID="bmI-w6-D1F">
             <objects>
                 <tableViewController id="pEz-y5-OW2" customClass="ScheduleListTableViewController" customModule="TakeAPill" customModuleProvider="target" sceneMemberID="viewController">
@@ -99,6 +100,7 @@
                                         <constraint firstAttribute="bottom" secondItem="tMo-34-RPc" secondAttribute="bottom" constant="5" id="hgg-ej-Rtf"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <inset key="separatorInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <connections>
                                     <outlet property="consumptionTimeLabel" destination="ZRa-ng-OUB" id="dKI-nt-DD1"/>
                                     <outlet property="nameLabel" destination="X10-1C-OoX" id="xoB-4i-2j3"/>
@@ -112,7 +114,7 @@
                             <outlet property="delegate" destination="pEz-y5-OW2" id="qs5-wL-Pev"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Schedule List" id="ajy-1a-vDf">
+                    <navigationItem key="navigationItem" title="Medication Schedules" id="ajy-1a-vDf">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="2wv-pQ-scu">
                             <connections>
                                 <segue destination="BHa-KO-gvr" kind="show" id="xMW-Hh-XV0"/>
@@ -124,10 +126,61 @@
             </objects>
             <point key="canvasLocation" x="1874" y="-617"/>
         </scene>
-        <!--Navigation Controller-->
+        <!--Tab Bar Controller-->
+        <scene sceneID="xX0-GS-H2y">
+            <objects>
+                <tabBarController id="I6A-Ml-VZA" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="kcL-jo-fjj"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="EEI-kf-1cX">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" red="0.94117653369999998" green="0.94117647410000005" blue="0.94117647410000005" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <color key="barTintColor" white="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="NZK-m4-Gz3" kind="relationship" relationship="viewControllers" id="fYo-QF-PEE"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QG7-RX-gYn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-396" y="-1061"/>
+        </scene>
+        <!--Reminders-->
+        <scene sceneID="MWB-62-bn6">
+            <objects>
+                <tableViewController id="wbf-Or-vkd" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" id="1t7-Qc-gTV">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="zf4-NT-98z">
+                                <rect key="frame" x="0.0" y="44.5" width="414" height="43.5"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="zf4-NT-98z" id="JAA-fI-mEL">
+                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="wbf-Or-vkd" id="GFE-f5-xbI"/>
+                            <outlet property="delegate" destination="wbf-Or-vkd" id="tcm-tu-MUR"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Reminders" id="ovM-e2-Uao"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="B6s-49-itb" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1874" y="-1434"/>
+        </scene>
+        <!--Schedules-->
         <scene sceneID="zgw-se-6O7">
             <objects>
                 <navigationController id="NZK-m4-Gz3" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Schedules" id="RS0-a1-ELm">
+                        <imageReference key="image" image="calendar" catalog="system" symbolScale="large" renderingMode="template"/>
+                    </tabBarItem>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="tyl-VQ-Nhs">
                         <rect key="frame" x="0.0" y="44" width="414" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -200,26 +253,24 @@
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
-                            <tableViewSection headerTitle="Consumption time" id="isj-rw-5Fz">
+                            <tableViewSection headerTitle="Consumption time" id="a5z-OZ-mdg">
                                 <cells>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="TZc-fm-1HL">
-                                        <rect key="frame" x="0.0" y="169.5" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="LLn-pW-ij1">
+                                        <rect key="frame" x="0.0" y="169.5" width="414" height="10"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="TZc-fm-1HL" id="bac-Jj-71Y">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LLn-pW-ij1" id="SaT-zi-OWd">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dYv-LP-Epg" customClass="DatePickerTextField" customModule="TakeAPill" customModuleProvider="target">
-                                                    <rect key="frame" x="15" y="5" width="384" height="34"/>
-                                                    <fontDescription key="fontDescription" style="UICTFontTextStyleBody"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t1G-IX-ayh" customClass="ConsumptionTimeSetupBar" customModule="TakeAPill" customModuleProvider="target">
+                                                    <rect key="frame" x="15" y="5" width="384" height="0.0"/>
+                                                </stackView>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="dYv-LP-Epg" firstAttribute="leading" secondItem="bac-Jj-71Y" secondAttribute="leading" constant="15" id="1HM-g3-Vw1"/>
-                                                <constraint firstItem="dYv-LP-Epg" firstAttribute="top" secondItem="bac-Jj-71Y" secondAttribute="top" constant="5" id="EmL-p1-dBU"/>
-                                                <constraint firstAttribute="trailing" secondItem="dYv-LP-Epg" secondAttribute="trailing" constant="15" id="Mk1-W7-Gt9"/>
-                                                <constraint firstAttribute="bottom" secondItem="dYv-LP-Epg" secondAttribute="bottom" constant="5" id="uML-Cd-eBu"/>
+                                                <constraint firstItem="t1G-IX-ayh" firstAttribute="top" secondItem="SaT-zi-OWd" secondAttribute="top" constant="5" id="SN3-zh-zmu"/>
+                                                <constraint firstAttribute="bottom" secondItem="t1G-IX-ayh" secondAttribute="bottom" constant="5" id="eDh-oj-Qh9"/>
+                                                <constraint firstAttribute="trailing" secondItem="t1G-IX-ayh" secondAttribute="trailing" constant="15" id="gfK-im-zFm"/>
+                                                <constraint firstItem="t1G-IX-ayh" firstAttribute="leading" secondItem="SaT-zi-OWd" secondAttribute="leading" constant="15" id="mzN-3Y-PZO"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                     </tableViewCell>
@@ -228,7 +279,7 @@
                             <tableViewSection headerTitle="Days of the week" id="2Mw-h8-FUL">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" id="bWn-Ta-Vak">
-                                        <rect key="frame" x="0.0" y="246.5" width="414" height="10"/>
+                                        <rect key="frame" x="0.0" y="212.5" width="414" height="10"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="bWn-Ta-Vak" id="ZyD-xl-bXZ">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="10"/>
@@ -330,7 +381,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="consumptionTimeTextField" destination="dYv-LP-Epg" id="2B8-pI-IK0"/>
+                        <outlet property="consumptionTimeSetupBar" destination="t1G-IX-ayh" id="gL2-Mz-Rvv"/>
                         <outlet property="nameTextField" destination="GNb-wW-0v9" id="c2m-48-eae"/>
                         <outlet property="navigationBar" destination="dXH-TG-brS" id="K8e-fa-UI5"/>
                         <outlet property="periodDatesPicker" destination="viM-Cg-wg6" id="iKy-iF-eYv"/>
@@ -343,7 +394,7 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UOY-5Q-Dmu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <exit id="WfI-cu-MOS" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
-            <point key="canvasLocation" x="1903" y="116"/>
+            <point key="canvasLocation" x="1902.8985507246377" y="115.84821428571428"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Uta-pb-uPV">
@@ -362,11 +413,34 @@
             </objects>
             <point key="canvasLocation" x="800" y="116"/>
         </scene>
+        <!--Reminders-->
+        <scene sceneID="bN1-Pw-B9p">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="4A5-KF-sHB" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Reminders" id="2gI-D5-fvl">
+                        <imageReference key="image" image="clock" catalog="system" symbolScale="medium" renderingMode="template"/>
+                    </tabBarItem>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="WaV-wn-NH2">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wbf-Or-vkd" kind="relationship" relationship="rootViewController" id="Cpr-MP-ebX"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N9e-84-fY7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="800" y="-1434"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="nO4-5M-5Uw"/>
     </inferredMetricsTieBreakers>
     <resources>
+        <image name="calendar" catalog="system" width="128" height="106"/>
+        <image name="clock" catalog="system" width="128" height="121"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

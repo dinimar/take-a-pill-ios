@@ -24,9 +24,27 @@ class MedicationScheduleTableViewCell: UITableViewCell {
 
     func update(schedule: MedicationSchedule) {
         nameLabel.text = schedule.name
-        consumptionTimeLabel.text = schedule.consumptionTime.formatted(date: .omitted, time: .shortened)
+        setConsumptionTimeLabelText(timestamps: schedule.consumptionTime)
         weekdaysLabel.text = schedule.weekDays
             .map({Calendar.localizedShortWeekdaySymbols[$0.rawValue]})
             .joined(separator: ", ")
+    }
+
+    private func setConsumptionTimeLabelText(timestamps: [Date]) {
+        var consumptionTime = timestamps.sorted(by: {$0.minutes < $1.minutes})
+
+        let isLongString = timestamps.count > 3
+        if (isLongString) {
+            consumptionTime = Array(consumptionTime[0..<3])
+        }
+
+        var labelText = consumptionTime.map(
+            {$0.formatted(date: .omitted, time: .shortened)})
+            .joined(separator: ", ")
+        if (isLongString) {
+            labelText.append(", ...")
+        }
+
+        consumptionTimeLabel.text = labelText
     }
 }
